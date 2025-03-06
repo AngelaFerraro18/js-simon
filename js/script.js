@@ -18,6 +18,13 @@ const fiftInputElement = document.getElementById('fift-input');
 // salvo in una variabile il valore del messaggio che comparirà dopo aver inviato i dati
 const messageForUserElement = document.getElementById('message');
 
+// creo una variabile contatore che parte da 30
+let count = 30;
+
+// uso la timing-fn setInterval per attivare il countdown
+const countThirtyToZero = setInterval(countDownFn, 1000);
+
+
 // creo un array vuoto per raccogliere i numeri random che saranno generati negli elementi li
 let arrayRandomNumbers = [];
 
@@ -37,13 +44,6 @@ for (let i = 0; i < 5; i++) {
 } 
 
 
-// creo una variabile contatore che parte da 30
-let count = 30;
-
-// uso la timing-fn setInterval per attivare il countdown
-const countThirtyToZero = setInterval(countDownFn, 1000);
-
-
 // creo l'evento per il form 
 answersFormElement.addEventListener('submit', function(e){
 
@@ -51,7 +51,7 @@ answersFormElement.addEventListener('submit', function(e){
 
     // raccolgo i dati immessi dall'utente in un array e li converto in numero
     const numbers = [parseInt(firstInputElement.value), parseInt(secondInputElement.value), parseInt(thirdInputElement.value), parseInt(fourthInputElement.value), parseInt(fiftInputElement.value)];
-
+   
     //controllo che i numeri immessi dall'utente siano presenti con l'uso di filter
     let guessedNumbers = numbers.filter(number => arrayRandomNumbers.includes(number));
 
@@ -67,8 +67,6 @@ answersFormElement.addEventListener('submit', function(e){
         messageForUserElement.innerHTML = 'Non hai indovinato nessun numero!';
     }
 })
-
-
 
 
 
