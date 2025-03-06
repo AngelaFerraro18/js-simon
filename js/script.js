@@ -1,4 +1,3 @@
-/* Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi. */
 
 /*Dopo 30 secondi i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto*/
 
@@ -9,6 +8,9 @@ const numListElement = document.getElementById('numbers-list');
 
 // salvo in una variabile il valore del contenitore del conto alla rovescia
 const countDownElement = document.getElementById('countdown');
+
+// salvo in una variabile il valore del form
+const answersFormElement = document.getElementById('answers-form');
 
 //creo un ciclo per creare gli elementi li da inserire in ul
 for (let i = 0; i < 5; i++) {
@@ -61,8 +63,6 @@ const countThirtyToZero = setInterval(countDownFn, 1000);
 
 
 
-
-
 /* funzioni */
 
 function countDownFn() {
@@ -72,5 +72,7 @@ function countDownFn() {
 
     if (count === 0) {
         clearInterval(countThirtyToZero);
+        answersFormElement.classList.remove('d-none');
+        numListElement.classList.add('d-none');
     }
 }
