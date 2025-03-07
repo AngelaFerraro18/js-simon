@@ -5,6 +5,9 @@ const numListElement = document.getElementById('numbers-list');
 // salvo in una variabile il valore del contenitore del conto alla rovescia
 const countDownElement = document.getElementById('countdown');
 
+// salvo in una variabile il valore del messaggio sotto il countdown
+const instructionsElement = document.getElementById('instructions');
+
 // salvo in una variabile il valore del form
 const answersFormElement = document.getElementById('answers-form');
 
@@ -83,5 +86,6 @@ function countDownFn() {
         clearInterval(countThirtyToZero);
         answersFormElement.classList.remove('d-none');
         numListElement.classList.add('d-none');
+        instructionsElement.innerText = "Inserisci tutti i numeri che ricordi, l'ordine non è importante";
     }
 }
