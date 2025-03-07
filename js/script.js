@@ -20,6 +20,7 @@ const messageForUserElement = document.getElementById('message');
 
 // creo una variabile contatore che parte da 30
 let count = 30;
+countDownElement.innerText = count;
 
 // uso la timing-fn setInterval per attivare il countdown
 const countThirtyToZero = setInterval(countDownFn, 1000);
@@ -74,9 +75,9 @@ answersFormElement.addEventListener('submit', function(e){
 /* funzioni */
 
 function countDownFn() {
-    count--
+    // count--
 
-    countDownElement.innerText = count;
+    countDownElement.innerText = --count;
 
     if (count === 0) {
         clearInterval(countThirtyToZero);
